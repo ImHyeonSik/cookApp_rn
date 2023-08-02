@@ -20,13 +20,17 @@ import {
   View,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+// import {Login} from './view/login/login';
+import LoginStack from './navigation/LoginStack';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <Text>Hi</Text>
-      </SafeAreaView>
+      {/*<SafeAreaView>*/}
+      {/*<Text>Hi</Text>*/}
+      {/*<Login />*/}
+      <LoginStack />
+      {/*</SafeAreaView>*/}
     </NavigationContainer>
   );
 };

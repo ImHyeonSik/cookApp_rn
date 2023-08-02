@@ -1,0 +1,78 @@
+const Color = {
+  main: '#60bccc',
+  mainOpacity: 'rgba(96, 188, 204, 0.7)',
+  mainDark: '#39334D',
+  mainBackground: '#eaf5f5',
+  mainDeep: '#218799',
+  mainButton: '#54ccdd',
+  mainTextLine: '#99ddea',
+
+  white: '#ffffff',
+  shadowF8: '#F8F8F8',
+  shadowEF: '#EFEFEF',
+  shadowEA: '#EAEAEA',
+  shadowDD: '#DDDDDD',
+  shadowCC: '#CCCCCC',
+  shadowBE: '#bebebe',
+  shadowBB: '#bbbbbb',
+  dashboardBase: '#F8F8F8',
+  shadow99: '#999999',
+  shadow77: '#777777',
+  shadow66: '#666666',
+  shadow55: '#555555',
+  shadow33: '#333333',
+  shadowBlue: '#716795',
+  shadowBtn: '#39334D',
+  shadowAB: '#ababab',
+
+  red: '#FF6352',
+  green: '#AFC317',
+  blue: '#45ABDC',
+  orange: '#FFB12B',
+
+  google: '#d34836',
+  naver: '#03C75A',
+  kakao: '#FEE500',
+
+  callGreen: '#66cc99',
+
+  black: '#000000',
+
+  pinkRed: '#EA6666',
+  pink: '#DD87AB',
+  rosePink: '#FC9494',
+  yellow: '#f7e764',
+  lightGreen: '#bcdd72',
+  deepGreen: '#66BA99',
+  blueGreen: '#2da491',
+  lightBlue: '#7fcec9',
+  lightBlue2: '#99d8d4',
+  lightBlue3: '#bfe6e4',
+  lightBlue4: '#64bacb0d',
+
+  darkBlue: '#3e91b3',
+  seaBlue: '#6699cc',
+  bright: '#f1f4f5',
+  beige: '#FAF9F9',
+  light: '#f3f3f3',
+  table: '#EFEFF4',
+  tableBorder: '#C8C7CC',
+  shadow: '#bebebe',
+  shadowE3: '#E3E3E5',
+  shadow3E: '#3E3A39',
+  shadowLight: '#bebebe80',
+  shadowDark: '#707070',
+  gray: '#7f7f7f',
+  dark: '#525252',
+  half: '#00000080',
+  black33: '#333333',
+  black66: '#666666',
+  silverGray: '#eaeaea',
+  btnCol: 'rgba(255, 255, 255, 0.1)', //btnColor 추가 20.04.22
+
+  overlay: 'rgba(0, 0, 0, 0.7)',
+  transColor: 'rgba(255, 255, 255, 0)',
+};
+Color.back = (c = 'black', hex) =>
+  c && {backgroundColor: `${Color[c]}${hex ? hex : ''}`};
+export default Color;
