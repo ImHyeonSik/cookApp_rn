@@ -3,12 +3,13 @@ import Login from '../view/login/login';
 import MainTab from './MainTab';
 import Ingredient from '../view/ingredient/Ingredient';
 import Setting from '../view/setting/Setting';
+import color from '../src/common/color';
 
 const Stack = createNativeStackNavigator();
 
 const SettingStack = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator>
       {/*<Stack.Screen*/}
       {/*  name="Login"*/}
       {/*  component={Login}*/}
@@ -17,7 +18,17 @@ const SettingStack = () => {
       <Stack.Screen
         name="Setting"
         component={Setting}
-        // options={{title: 'Overview'}}
+        options={{
+          title: '환경설정',
+          headerStyle: {
+            backgroundColor: color.baseBackground,
+          },
+          headerTintColor: color.black,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitleAlign: 'center',
+        }}
       />
     </Stack.Navigator>
   );

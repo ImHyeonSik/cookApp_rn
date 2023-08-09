@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Color, Dim, Img} from '../src/common';
+import {Color, Img} from '../src/common';
 import {Image, Text} from '../view/comp/components';
 import {SafeAreaView, TouchableOpacity, View} from 'react-native';
 import {useSelector} from 'react-redux';
@@ -70,7 +70,7 @@ export const MyTabBar = ({
               {route.name === 'MemberStack' ? (
                 <Image
                   source={isFocused ? Img.member_on : Img.member_off}
-                  style={{...Dim.size(30, 30)}}
+                  // style={{...Dim.size(30, 30)}}
                 />
               ) : route.name === 'Chatting' ? (
                 <View style={{}}>
@@ -82,14 +82,14 @@ export const MyTabBar = ({
                         top: -5,
                         right: -5,
                         zIndex: 1,
-                        ...Dim.size(5, 5),
+                        // ...Dim.size(5, 5),
                       }}
                     />
                   )}
 
                   <Image
                     source={isFocused ? Img.chatting_on : Img.chatting_off}
-                    style={{...Dim.size(30, 30)}}
+                    // style={{...Dim.size(30, 30)}}
                   />
                   {chatCnt > 0 && (
                     <Text
@@ -98,7 +98,7 @@ export const MyTabBar = ({
                         top: -45,
                         right: -15,
                         backgroundColor: Color.red,
-                        ...Dim.padding(3, 7),
+                        // ...Dim.padding(3, 7),
                         borderRadius: 20,
                         fontSize: 12,
                       }}
@@ -110,7 +110,7 @@ export const MyTabBar = ({
               ) : (
                 <Image
                   source={isFocused ? Img.setting_on : Img.setting_off}
-                  style={{...Dim.size(30, 30)}}
+                  // style={{...Dim.size(30, 30)}}
                 />
               )}
             </TouchableOpacity>

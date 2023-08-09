@@ -13,11 +13,12 @@ const MainTab = () => {
   return (
     <Tab.Navigator
       // initialRouteName={"Chatting"}
-      screenOptions={({route}) => ({
-        headerShown: false,
-        tabBarHideOnKeyboard: true,
-        tabBarIconStyle: {display: 'none'},
-      })}
+      screenOptions={{headerShown: false}}
+      // screenOptions={({route}) => ({
+      //   headerShown: false,
+      //   tabBarHideOnKeyboard: true,
+      //   tabBarIconStyle: {display: 'none'},
+      // })}
       // tabBar={props => <MyTabBar {...props} socket={socket} />}
       backBehavior={'none'}>
       <Tab.Screen
@@ -32,20 +33,20 @@ const MainTab = () => {
       <Tab.Screen
         name="IngredientStack"
         component={IngredientStack}
-        options={({route}) => ({
-          // tabBarVisible: getVisibility(route, 1),
-          // tabBarVisible: true,
-          tabBarLabel: 'IngredientStack',
-        })}
+        // options={({route}) => ({
+        //   // tabBarVisible: getVisibility(route, 1),
+        //   // tabBarVisible: true,
+        //   tabBarLabel: 'IngredientStack',
+        // })}
       />
       <Tab.Screen
         name="SettingStack"
         component={SettingStack}
-        options={({route}) => ({
-          // tabBarVisible: getVisibility(route, 1),
-          // tabBarVisible: true,
-          tabBarLabel: 'SettingStack',
-        })}
+        // options={({route}) => ({
+        //   // tabBarVisible: getVisibility(route, 1),
+        //   // tabBarVisible: true,
+        //   tabBarLabel: 'SettingStack',
+        // })}
       />
       {/*<Tab.Screen*/}
       {/*    name="SettingStack"*/}

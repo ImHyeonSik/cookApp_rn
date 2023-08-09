@@ -1,6 +1,6 @@
 import LocalizedStrings from 'react-native-localization';
 import ko from '../lang/ko';
-import en from '../lang/en';
+// import en from '../lang/en';
 
 export const list = [
   // {code: 'en', name: 'English', fullCode: 'en-US'},

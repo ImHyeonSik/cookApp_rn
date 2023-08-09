@@ -1,5 +1,6 @@
-import fetch from 'react-native-fetch-polyfill';
+// import fetch from 'react-native-fetch-polyfill';
 import {getItemFromAsync} from '../data/storage';
+import axios from 'axios';
 
 const isTestServerRelease = false; // true 로 두지 않도록 주의
 const isTestServer = true;
@@ -32,7 +33,7 @@ const connect = async ({
   } else headers.Authorization = auth;
   const addr =
     url.charAt(0) !== '/' ? url : test ? `test${url}` : `${list.base}${url}`;
-  const res = await fetch(`${addr}${query ? encode(query) : ''}`, {
+  const res = await axios(`${addr}${query ? encode(query) : ''}`, {
     headers,
     method,
     body: form || JSON.stringify(data),

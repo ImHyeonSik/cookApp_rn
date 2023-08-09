@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 
 const LoginStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       {/*<Stack.Screen*/}
       {/*  name="Login"*/}
       {/*  component={Login}*/}
@@ -15,7 +15,7 @@ const LoginStack = () => {
       <Stack.Screen
         name="MainTab"
         component={MainTab}
-        options={{title: 'Overview'}}
+        // options={{title: 'Overview'}}
       />
     </Stack.Navigator>
   );

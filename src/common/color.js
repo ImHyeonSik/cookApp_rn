@@ -1,4 +1,6 @@
 const Color = {
+  baseBackground: '#F9FDED',
+
   main: '#60bccc',
   mainOpacity: 'rgba(96, 188, 204, 0.7)',
   mainDark: '#39334D',
