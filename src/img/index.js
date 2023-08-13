@@ -16,6 +16,8 @@ const Img = {
 
   question: require('../img/question.png'),
 
+  search: require('../img/search.png'),
+
   naver: require('../img/login/naver.png'),
   kakao: require('../img/login/kakao.png'),
   apple: require('../img/login/apple.png'),
