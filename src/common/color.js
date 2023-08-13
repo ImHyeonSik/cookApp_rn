@@ -1,7 +1,8 @@
 const Color = {
   baseBackground: '#F9FDED',
 
-  main: '#60bccc',
+  main: '#48764E',
+  mainLight: '#66A384',
   mainOpacity: 'rgba(96, 188, 204, 0.7)',
   mainDark: '#39334D',
   mainBackground: '#eaf5f5',

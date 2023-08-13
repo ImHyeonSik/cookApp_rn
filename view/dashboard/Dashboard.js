@@ -1,7 +1,9 @@
 import React from 'react';
 import {NativeModules, StyleSheet, View} from 'react-native';
-import {BaseView, Text} from '../comp/components';
-import {Color, Dim} from '../../src/common';
+import {BaseView, Image, Text} from '../comp/components';
+import {Color, Dim, Img} from '../../src/common';
+import {NotificationWindow} from '../comp/NotificationWindow';
+import Ingredient from '../ingredient/Ingredient';
 
 const {StatusBarManager} = NativeModules;
 
@@ -11,99 +13,58 @@ const Dashboard = ({navigation, route}) => {
   // }));
 
   return (
-    <BaseView needScrollView={false}>
-      <View>
-        <Text>sfsfs</Text>
+    <BaseView
+      needScrollView={false}
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: Color.baseBackground,
+      }}>
+      <View style={{flex: 1, width: '100%'}}>
+        <NotificationWindow
+          color={Color.mainLight}
+          image={Img.question}
+          text={'냉장고에 재료를 채줘주세요!'}
+        />
+
+        <View
+          style={{
+            flex: 1,
+            // borderWidth: 1,
+            // margin: ,
+            ...Dim.margin(30, 30, 30),
+            // ...Dim.padding(0, 20, 0, 20),
+          }}>
+          <Image
+            viewStyle={{
+              position: 'absolute',
+              zIndex: 10,
+              right: -20,
+            }}
+            source={Img.plus}
+            hitSlop={{top: 20, bottom: 20, left: 20, right: 20}}
+            onPress={() => {
+              console.log('gsgsg');
+              navigation.replace('Ingredient');
+            }}
+          />
+          <Image
+            // viewStyle={{...Dim.margin(10, 10, 10, 10)}}
+            style={{
+              // ...Dim.margin(40),
+              width: '100%',
+              height: '100%',
+              zIndex: -10,
+            }}
+            // resizeMode="cover"
+            source={Img.refrigerator_01}
+          />
+        </View>
       </View>
     </BaseView>
   );
 };
 
-const css = StyleSheet.create({
-  memberListTitleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  memberListContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    width: '95%',
-  },
-  searchContainer: {
-    ...Dim.margin(0, 0, 10, 0),
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  sortImageStyle: {
-    ...Dim.size(25, 25),
-    ...Dim.margin(10, 10),
-  },
-  notiContainer: {
-    height: '100%',
-    width: '100%',
-    backgroundColor: Color.mainBackground,
-  },
-  notiHeaderContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  allSelectButton: {
-    ...Dim.margin(0, 0, 10, 0),
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  notiMemberListContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    width: '95%',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-  },
-  notiFloatingButton: {
-    zIndex: 1,
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-  },
-  sendMessageContainer: {
-    ...Dim.margin(20, 20),
-    ...Dim.padding(20, 20),
-    height: Dim.fullHeight * 0.45,
-    flexDirection: 'row',
-    backgroundColor: Color.white,
-    borderWidth: 1,
-    borderColor: Color.shadowCC,
-    borderRadius: 20,
-  },
-  sendButton: {
-    ...Dim.margin(0, 0, 10),
-    flex: 0.3,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  sendButtonStyle: {
-    ...Dim.margin(10, 20),
-    width: Dim.fullWidth * 0.9,
-    height: Dim.x(50),
-    borderRadius: 10,
-  },
-  selectionButton: {
-    ...Dim.margin(10, 20),
-    borderRadius: 10,
-    width: Dim.fullWidth * 0.9,
-    height: Dim.x(50),
-  },
-  exampleTypeSelection: {
-    ...Dim.margin(10, 0, 15),
-    flex: 1,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: Color.shadowCC,
-    width: Dim.fullWidth * 0.9,
-  },
-});
+const css = StyleSheet.create({});
 
 export default Dashboard;

@@ -9,7 +9,10 @@ const Stack = createNativeStackNavigator();
 
 const SettingStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShadowVisible: false, // 상단 헤더의 그림자 숨김
+      }}>
       {/*<Stack.Screen*/}
       {/*  name="Login"*/}
       {/*  component={Login}*/}
