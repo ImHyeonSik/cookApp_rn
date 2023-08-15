@@ -20,6 +20,7 @@ const Color = {
   shadowBE: '#bebebe',
   shadowBB: '#bbbbbb',
   dashboardBase: '#F8F8F8',
+  shadowC2: '#C2C2C2',
   shadow99: '#999999',
   shadow77: '#777777',
   shadow66: '#666666',

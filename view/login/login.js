@@ -20,7 +20,6 @@ const Login = ({navigation}) => {
       // needScrollView={true}
       style={{
         flex: 1,
-        borderWidth: 3,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: Color.baseBackground,

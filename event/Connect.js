@@ -2,10 +2,17 @@
 import {getItemFromAsync} from '../data/storage';
 import axios from 'axios';
 
+const base = 'http://ec2-43-202-30-201.ap-northeast-2.compute.amazonaws.com:80';
+
 const isTestServerRelease = false; // true 로 두지 않도록 주의
 const isTestServer = true;
 export const list = {
-  base: isTestServerRelease || (isTestServer && __DEV__) ? 'test' : 'prod',
+  // base: isTestServerRelease || (isTestServer && __DEV__) ? 'test' : 'prod',
+  base: isTestServerRelease || (isTestServer && __DEV__) ? base : base,
+
+  categorySave: '/api/v1/category',
+
+  getUserData: '/api/v1/storage',
 };
 
 const formType = 'multipart/form-data';
@@ -32,7 +39,11 @@ const connect = async ({
     headers.Authorization = token;
   } else headers.Authorization = auth;
   const addr =
-    url.charAt(0) !== '/' ? url : test ? `test${url}` : `${list.base}${url}`;
+    url.charAt(0) !== '/'
+      ? url
+      : test
+      ? `http://ec2-43-202-30-201.ap-northeast-2.compute.amazonaws.com:80${url}`
+      : `${list.base}${url}`;
   const res = await axios(`${addr}${query ? encode(query) : ''}`, {
     headers,
     method,
@@ -57,6 +68,18 @@ const encode = (params = {}) => {
       .join('&')
   );
 };
+const simple = (url, query, more) => exec(() => connect({query, url, ...more}));
+// const simple = (url, query, more) => exec(() => connect({query, url, ...more}));
+const post = (data, url, username, more) =>
+  exec(() =>
+    connect({...postJson, data: postData(data, username), url, ...more}),
+  );
+
+const postData = (data, username = false) => {
+  data = {...data};
+  if (username) data.username = DB.getUser().username;
+  return data;
+};
 
 const exec = async func => {
   try {
@@ -72,4 +95,15 @@ const exec = async func => {
   }
 };
 
-export default {};
+export default {
+  categorySave: data => {
+    //console.log({data});
+    return simple(list.categorySave, data, {auth: false});
+  },
+
+  getUserData: async data => {
+    return simple(list.getUserData, data);
+  },
+
+  // saveProfile : async data => post(data, list.saveProfile),
+};

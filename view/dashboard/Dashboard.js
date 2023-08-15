@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NativeModules, StyleSheet, View} from 'react-native';
 import {BaseView, Image, Text} from '../comp/components';
 import {Color, Dim, Img} from '../../src/common';
 import {NotificationWindow} from '../comp/NotificationWindow';
 import Ingredient from '../ingredient/Ingredient';
+import useLoad from '../../src/hook/useLoad';
+import Connect from '../../event/Connect';
 
 const {StatusBarManager} = NativeModules;
 
@@ -11,6 +13,31 @@ const Dashboard = ({navigation, route}) => {
   // const {value} = useSelector(({user}) => ({
   //   value: user.get('userData').toJS(),
   // }));
+
+  const [load] = useLoad();
+
+  useEffect(() => {
+    read();
+    // load();
+    // // () => Connect.memberList({mngIndex: value.managerIndex}),
+    // // result => {
+    // //   const {code, list} = result;
+    // //   if (code === 200) {
+    // //     setMemberList(list);
+    // //     setMemberOriginal(list);
+    // //     setSearchList(list);
+    // //   }
+    // // },
+  }, []);
+
+  const read = async () => {
+    await load(
+      () => Connect.getUserData({id: 1}),
+      result => {
+        console.log('fwfweefwefbb ', result);
+      },
+    );
+  };
 
   return (
     <BaseView

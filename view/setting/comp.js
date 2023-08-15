@@ -16,18 +16,24 @@ export const SettingBaseList = props => {
         borderColor: color.gray,
         ...Dim.margin(10, 0, 0, 0),
       }}>
-      {item.map(({onPress, text}, index) => {
+      {item.map(({onPress, text, button}, index) => {
         return (
           <View
             key={index.toString()}
             style={{
-              ...Dim.margin(10, 10, 10, 10),
+              flex: 1,
+              ...Dim.padding(10, 10, 10, 10),
+              ...Dim.margin(0, 10, 0, 10),
               borderBottomWidth: index !== item.length - 1 ? 1 : 0,
               borderColor: color.gray,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              // borderWidth: 1,
             }}>
-            <Text bold style={{...Dim.padding(0, 0, 2, 0)}}>
-              {text}
-            </Text>
+            {/*<Text bold style={{...Dim.margin(0, 0, 2, 0)}}>*/}
+            <Text style={{...Dim.margin(0, 0, 2, 0)}}>{text}</Text>
+
+            {button && button}
           </View>
         );
       })}

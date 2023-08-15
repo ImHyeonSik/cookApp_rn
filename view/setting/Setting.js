@@ -1,5 +1,11 @@
-import React from 'react';
-import {PermissionsAndroid, Platform, StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  PermissionsAndroid,
+  Platform,
+  StyleSheet,
+  Switch,
+  View,
+} from 'react-native';
 import {BaseView, Image, Pressable, ScrollView, Text} from '../comp/components';
 import {Color, Dim, Img, Style, t} from '../../src/common';
 // import {MiddleTitleContainer} from './comp';
@@ -15,10 +21,62 @@ import {SettingBaseList} from './comp';
 // import SlidePopMenu from '../comp/SlidePopMenu';
 
 const Setting = () => {
+  const [autoLogin, setAutoLogin] = useState(false); // 자동로그인 토글 상태
+  const [noti, setNoti] = useState(false); // 알림 토글 상태
+  const [ad, setAd] = useState(false); // 광고
+
   let listItem1 = [
-    {text: '자동 로그인', onPress: () => console.log('자동 로그인')},
-    {text: '알림', onPress: () => console.log('알림')},
-    {text: '광고', onPress: () => console.log('광고')},
+    {
+      text: '자동 로그인',
+      onPress: () => console.log('자동 로그인'),
+      button: (
+        <View>
+          <Switch
+            trackColor={{false: Color.shadowC2, true: Color.main}}
+            // thumbColor={autoLogin ? '#f5dd4b' : '#f4f3f4'}
+            thumbColor={Color.white}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={setAutoLogin}
+            value={autoLogin}
+            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+          />
+        </View>
+      ),
+    },
+    {
+      text: '알림',
+      onPress: () => console.log('알림'),
+      button: (
+        <View>
+          <Switch
+            trackColor={{false: Color.shadowC2, true: Color.main}}
+            // thumbColor={autoLogin ? '#f5dd4b' : '#f4f3f4'}
+            thumbColor={Color.white}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={setNoti}
+            value={noti}
+            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+          />
+        </View>
+      ),
+    },
+    {
+      text: '광고',
+      onPress: () => console.log('광고'),
+      button: (
+        <View>
+          <Switch
+            trackColor={{false: Color.shadowC2, true: Color.main}}
+            // thumbColor={autoLogin ? '#f5dd4b' : '#f4f3f4'}
+            thumbColor={Color.white}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={setAd}
+            value={ad}
+            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+          />
+        </View>
+      ),
+    },
   ];
   let listItem2 = [
     {text: '버전겅보', onPress: () => console.log('자동 로그인')},
@@ -32,7 +90,7 @@ const Setting = () => {
 
   return (
     <BaseView
-      needScrollView={false}
+      // needScrollView={false}
       style={{
         flex: 1,
         alignItems: 'center',
