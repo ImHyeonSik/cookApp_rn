@@ -11,6 +11,9 @@ const Color = {
   mainButton: '#54ccdd',
   mainTextLine: '#99ddea',
 
+  buttonNotSelect: '#F6F5F1',
+  buttonSelect: '#E0F6A9',
+
   white: '#ffffff',
   shadowF8: '#F8F8F8',
   shadowEF: '#EFEFEF',
