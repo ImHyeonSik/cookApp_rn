@@ -15,6 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import {list} from '../../event/Connect';
 import {useDispatch} from 'react-redux';
 import {SettingBaseList} from './comp';
+import {Header} from '../comp/Header';
 // import {setUserData, showAlert} from '../../src/redux/action';
 // import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 // import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
@@ -38,7 +39,7 @@ const Setting = () => {
             ios_backgroundColor="#3e3e3e"
             onValueChange={setAutoLogin}
             value={autoLogin}
-            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+            style={{transform: [{scaleX: 1}, {scaleY: 1}]}}
           />
         </View>
       ),
@@ -55,7 +56,7 @@ const Setting = () => {
             ios_backgroundColor="#3e3e3e"
             onValueChange={setNoti}
             value={noti}
-            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+            style={{transform: [{scaleX: 1}, {scaleY: 1}]}}
           />
         </View>
       ),
@@ -72,7 +73,7 @@ const Setting = () => {
             ios_backgroundColor="#3e3e3e"
             onValueChange={setAd}
             value={ad}
-            style={{transform: [{scaleX: 1}, {scaleY: 1.3}]}}
+            style={{transform: [{scaleX: 1}, {scaleY: 1}]}}
           />
         </View>
       ),
@@ -96,6 +97,7 @@ const Setting = () => {
         alignItems: 'center',
         backgroundColor: Color.baseBackground,
       }}>
+      <Header title={'설정'} />
       <View
         style={{
           backgroundColor: Color.bright,

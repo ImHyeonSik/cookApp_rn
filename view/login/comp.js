@@ -7,7 +7,7 @@ export const SNSButton = ({img, text, textColor, backColor, onPress}) => (
     viewStyle={[css.snsBtnContainer, Color.back(backColor)]}
     onPress={onPress}>
     <Image style={css.snsImg} source={img} />
-    {/*<Text color={textColor}>{text}</Text>*/}
+    {text && <Text color={textColor}>{text}</Text>}
   </Pressable>
 );
 

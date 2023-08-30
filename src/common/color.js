@@ -71,12 +71,25 @@ const Color = {
   shadowLight: '#bebebe80',
   shadowDark: '#707070',
   gray: '#7f7f7f',
+  grayDC: '#DCDCDC',
   dark: '#525252',
   half: '#00000080',
   black33: '#333333',
   black66: '#666666',
   silverGray: '#eaeaea',
   btnCol: 'rgba(255, 255, 255, 0.1)', //btnColor 추가 20.04.22
+
+  btnInfo300: '#77B0FE',
+  btnInfo500: '#1E6CFC',
+  btnWarming300: '#FFE667',
+  btnWarming500: '#FFCC02',
+  btnSuccess300: '#A5F18C',
+  btnSuccess500: '#4CD140',
+  btnGray100: '#EEEEEE',
+  btnGray200: '#DFDFDF',
+
+  backlightGreen: '#C5FBB0',
+  backDeepGreen: '#1C9D2E',
 
   overlay: 'rgba(0, 0, 0, 0.7)',
   transColor: 'rgba(255, 255, 255, 0)',

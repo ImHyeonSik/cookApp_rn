@@ -12,6 +12,7 @@ const DashboardStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        headerShown: false,
         headerShadowVisible: false, // 상단 헤더의 그림자 숨김
       }}>
       {/*<Stack.Screen*/}
@@ -33,22 +34,6 @@ const DashboardStack = () => {
           },
           headerTitleAlign: 'center',
         }}
-      />
-
-      <Stack.Screen
-        name="Ingredient"
-        component={Ingredient}
-        // options={{
-        //     title: '쿡 나우',
-        //     headerStyle: {
-        //         backgroundColor: color.baseBackground,
-        //     },
-        //     headerTintColor: color.black,
-        //     headerTitleStyle: {
-        //         fontWeight: 'bold',
-        //     },
-        //     headerTitleAlign: 'center',
-        // }}
       />
     </Stack.Navigator>
   );

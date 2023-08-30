@@ -10,7 +10,7 @@ export const NotificationWindow = props => {
     <View
       style={{
         flexDirection: 'row',
-        // width: '100%',
+        width: '90%',
         borderRadius: 5,
         backgroundColor: color,
         ...Dim.margin(10, 15, 10, 15),

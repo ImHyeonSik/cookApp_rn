@@ -3,6 +3,8 @@ import {RESET_USER_DATA, SET_USER_DATA} from '../action/actionTypes';
 
 export const initialState = fromJS({
   userData: {
+    count: -1, // 장바구니 갯수 카운터
+    keyHeight: null,
     img: null,
     managerIndex: '',
     chat: -1,
@@ -43,6 +45,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_DATA:
       const {
+        count,
         img,
         managerIndex,
         login,
@@ -51,9 +54,12 @@ export default (state = initialState, action) => {
         chatCount,
         noti,
         setting,
+        keyHeight,
       } = action.data;
       // console.log('action.data =>', action.data, managerIndex)
 
+      if (count) state = state.setIn(['userData', 'count'], count);
+      if (keyHeight) state = state.setIn(['userData', 'keyHeight'], keyHeight);
       if (img) state = state.setIn(['userData', 'img'], img);
       if (managerIndex)
         state = state.setIn(['userData', 'managerIndex'], managerIndex);

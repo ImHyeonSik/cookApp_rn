@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 // import {Login} from './view/login/login';
+import Alert from './view/comp/Alert';
 import LoginStack from './navigation/LoginStack';
 import {Provider} from 'react-redux';
 import {applyMiddleware, createStore} from 'redux';
@@ -43,6 +44,7 @@ const App = () => {
         {/*<Text>Hi</Text>*/}
         {/*<Login />*/}
         <LoginStack />
+        <Alert />
         {/*</SafeAreaView>*/}
       </NavigationContainer>
     </Provider>

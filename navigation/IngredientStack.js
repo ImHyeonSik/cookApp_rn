@@ -10,6 +10,7 @@ const IngredientStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        headerShown: false,
         headerShadowVisible: false, // 상단 헤더의 그림자 숨김
       }}>
       {/*<Stack.Screen*/}

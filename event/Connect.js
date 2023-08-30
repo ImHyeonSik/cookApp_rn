@@ -9,10 +9,12 @@ const isTestServer = true;
 export const list = {
   // base: isTestServerRelease || (isTestServer && __DEV__) ? 'test' : 'prod',
   base: isTestServerRelease || (isTestServer && __DEV__) ? base : base,
-
   categorySave: '/api/v1/category',
+  categoryDelete: '/api/v1/category/{id}',
 
-  getUserData: '/api/v1/storage',
+  getList: '/api/v1/category/{id}/ingredients',
+
+  getUserData: `/api/v1/storage`,
 };
 
 const formType = 'multipart/form-data';
